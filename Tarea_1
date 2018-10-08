@@ -1,0 +1,28 @@
+# Taller-de-Programacion-en-Visual-Studio
+//tarea 1
+/*valores a imprimir sin castear*/
+        Console.WriteLine("Valores sin castear\n");
+        Console.WriteLine("El valor de Byte = {0}",numero);
+        Console.WriteLine("El valor de int = {0}", entero);
+        Console.WriteLine("El valor de decimal = {0:C}", dec);
+        Console.WriteLine("El valor de float = {0:F2}", f);
+        Console.WriteLine("El valor de double = {0:F5}", d);
+        Console.WriteLine("La letra de char = {0}", c);
+        Console.WriteLine("La cadena = " + cadena);
+        Console.WriteLine("El avlor booleano = " + opcion.ToString());
+        Console.WriteLine("El valor de la fecha es = " + fecha.ToShortDateString());
+        
+
+        //valores con el casteo
+        Console.WriteLine("\nValores con casteo\n");
+        entero = (int)f;
+        Console.WriteLine("El valor de f : [" + f.ToString() + "]     el entero es: {0} ",entero);
+        entero = (int) dec;
+        Console.WriteLine("La variable dec: [" + dec.ToString() + "]    ahora es entero: {0}",entero);
+        c = (char) entero;
+        Console.WriteLine("El valor de entero ["+ entero.ToString() + "]   ahora es c : {0} = 1",c);
+        Console.ReadKey();
+
+    }
+}
+}
