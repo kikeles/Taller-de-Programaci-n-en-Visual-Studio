@@ -1,0 +1,225 @@
+//uso de clases y struct
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Programa_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Operador valor = new Operador();
+            Console.WriteLine("Programa 3 clase con los operadores de asignacion");
+            Console.WriteLine("Ingresa el numero de la variable a = ");
+            valor.seta(float.Parse(Console.ReadLine()));
+            Console.WriteLine("Ingresa el numero de la variable b = ");
+            valor.setb(float.Parse(Console.ReadLine()));
+            valor.masIgual();
+
+            
+
+
+
+            Console.WriteLine("El valor de a es igual a = " + valor.geta());
+            Console.WriteLine("El valor de a es igual b = " + valor.getb());
+
+            Console.ReadKey();
+
+
+
+        }
+    }
+}
+
+
+
+//clase operador con metodos apartir de aquí
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Programa_3
+{
+    class Operador
+    {
+        private float a;
+        private float b;
+        //constructor 
+         public Operador()
+        {
+            
+
+        }
+
+        //metodos 
+
+        public  void masIgual( )
+        {
+            float res = a += b;
+            Console.WriteLine("El resultado de a += b es: {0}", res);   
+        }
+
+        public void menorIgual()
+        {
+            float res = a -= b;
+            Console.WriteLine("El resultado de a += b es: {0}", res);
+        }
+
+        public void productoIgual()
+        {
+            float res = a *= b;
+            Console.WriteLine("El resultado de a += b es: {0}", res);
+        }
+
+        public void divisiongual()
+        {
+            float res = a /= b;
+            Console.WriteLine("El resultado de a += b es: {0}", res);
+        }
+
+        public void modIgual()
+        {
+            float res = a %= b;
+            Console.WriteLine("El resultado de a += b es: {0}", res);
+        }
+
+        public void masMas()
+        {
+            float res = a ++;
+            Console.WriteLine("El resultado de a += b es: {0}", res);
+        }
+
+        public void menosMenos()
+        {
+            float res = a--;
+            Console.WriteLine("El resultado de a += b es: {0}", res);
+        }
+        //metodos set y get
+        public void seta(float valor)
+        {
+            a = valor;
+        }
+
+        public float geta()
+        {
+            return a;
+        }
+
+        public void setb(float valor)
+        {
+            b = valor;
+        }
+
+        public float getb()
+        {
+            return b;
+        }
+
+    }
+}
+
+//uso de tipo de variables Struct
+using System;
+
+namespace Struct
+{
+    class Program
+    {
+        struct Operacion //son tipos por valor o valores que se pueden agrupar y encapsular en un grupo de variables
+        {
+            public float a;
+            public float b;
+
+            //metodos 
+
+            public void masIgual()
+            {
+                float res = a += b;
+                Console.WriteLine("El resultado de a += b es: {0}", res);
+            }
+
+            public void menorIgual()
+            {
+                float res = a -= b;
+                Console.WriteLine("El resultado de a += b es: {0}", res);
+            }
+
+            public void productoIgual()
+            {
+                float res = a *= b;
+                Console.WriteLine("El resultado de a += b es: {0}", res);
+            }
+
+            public void divisiongual()
+            {
+                float res = a /= b;
+                Console.WriteLine("El resultado de a += b es: {0}", res);
+            }
+
+            public void modIgual()
+            {
+                float res = a %= b;
+                Console.WriteLine("El resultado de a += b es: {0}", res);
+            }
+
+            public void masMas()
+            {
+                float res = a++;
+                Console.WriteLine("El resultado de a += b es: {0}", res);
+            }
+
+            public void menosMenos()
+            {
+                float res = a--;
+                Console.WriteLine("El resultado de a += b es: {0}", res);
+            }
+
+        }
+        static void Main(string[] args)
+        {
+            Operacion var;//struct 
+            int opcion;
+
+            Console.WriteLine("Programa 4 la funcion struct con los operadores de asignacion");
+            Console.WriteLine("Ingresa el valor de la variable a = ");
+            var.a = (float.Parse(Console.ReadLine()));
+            Console.WriteLine("Ingresa el valor de la variable b = ");
+            var.b = (float.Parse(Console.ReadLine()));
+            Console.WriteLine("Menu\n1: +=\n2: -=\n3: *=\n4: /=\n5: %=\n6: ++\n7: --\nOpción:");
+            opcion = int.Parse(Console.ReadLine());
+            switch (opcion)
+            {
+                case 1:
+                    var.masIgual();
+                    break;
+                case 2:
+                    var.menorIgual();
+                    break;
+                case 3:
+                    var.productoIgual();
+                    break;
+                case 4:
+                    var.divisiongual();
+                    break;
+                case 5:
+                    var.modIgual();
+                    break;
+                case 6:
+                    var.masMas();
+                    break;
+                case 7:
+                    var.menosMenos();
+                    break;
+
+            }
+
+
+            Console.ReadKey();
+        }
+    }
+}
