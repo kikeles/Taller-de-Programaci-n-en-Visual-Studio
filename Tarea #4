@@ -1,0 +1,56 @@
+//Palíndromo
+using System;
+
+namespace Ejercicio_3_Cuadrado
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float valor = 0;
+            Metodos metodo = new Metodos();
+            Console.Write("Ingresa el lado del cuadrado perfecto: ");
+            valor = float.Parse(Console.ReadLine());
+            metodo.ingresarValor(valor);
+            Console.Write("El perímetro es: " + metodo.perimetro().ToString());
+            Console.WriteLine("\nLa superficie es: " + metodo.superficie().ToString());
+            Console.ReadKey();
+        }
+    }
+}
+
+//clase
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Ejercicio_3_Cuadrado
+{
+    class Metodos
+    {
+        private float lado=0;
+
+        public Metodos()
+        {
+            
+        }
+
+        public void ingresarValor(float num)
+        {
+            this.lado = num;
+        }
+
+        public float perimetro()
+        {
+            float pm = lado + lado + lado + lado;
+            return pm;
+        }
+
+        public float superficie()
+        {
+            float sup = lado * lado;
+            return sup;
+        }
+
+    }
+}
