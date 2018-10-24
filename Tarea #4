@@ -1,56 +1,48 @@
-//Palíndromo
+//ejercicio #4 arreglo
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Ejercicio_3_Cuadrado
+namespace Primer_parcial
 {
-    class Program
+    class Arreglo
     {
         static void Main(string[] args)
         {
-            float valor = 0;
-            Metodos metodo = new Metodos();
-            Console.Write("Ingresa el lado del cuadrado perfecto: ");
-            valor = float.Parse(Console.ReadLine());
-            metodo.ingresarValor(valor);
-            Console.Write("El perímetro es: " + metodo.perimetro().ToString());
-            Console.WriteLine("\nLa superficie es: " + metodo.superficie().ToString());
+            int[,] array = new int[4, 5]{
+                {1,9,23,34,102}, //1
+                {2,8,67,56,23}, //2
+                {3,7,84,78,43},//3
+                {4,5,90,98,34},//4
+            };
+
+            for (int i = 0; i <= 3; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    for (int j = 0; j <= 4; j++)
+                    {
+                        Console.Write("["+array[i,j]+"] ");
+                    }
+                    Console.Write("\n");
+                }
+               else
+                {
+                    for (int j = 4; j >= 0; j--)
+                    {
+                        Console.Write("["+array[i,j]+"] ");
+                    }
+                    Console.Write("\n");
+                }
+               
+            }
+
             Console.ReadKey();
-        }
-    }
-}
 
-//clase
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ejercicio_3_Cuadrado
-{
-    class Metodos
-    {
-        private float lado=0;
-
-        public Metodos()
-        {
-            
-        }
-
-        public void ingresarValor(float num)
-        {
-            this.lado = num;
-        }
-
-        public float perimetro()
-        {
-            float pm = lado + lado + lado + lado;
-            return pm;
-        }
-
-        public float superficie()
-        {
-            float sup = lado * lado;
-            return sup;
         }
 
     }
 }
+
